@@ -19,7 +19,7 @@ class TulingWXBot(WXBot):
             self.tuling_key = cf.get('main', 'key')
         except Exception:
             pass
-        print 'tuling_key:', self.tuling_key
+        print 'tuling_key:%s', self.tuling_key
 
     def tuling_auto_reply(self, uid, msg):
         if self.tuling_key:
@@ -100,7 +100,7 @@ def main():
     bot = TulingWXBot()
     bot.DEBUG = True
     bot.conf['qr'] = 'png'
-
+    bot.robot_switch = True
     bot.run()
 
 
